@@ -36,14 +36,14 @@
 
 ## Features
 
-- **Live Home Screen Widget** — Small & medium sizes showing today's calories vs. goal, auto-refreshes every 15 minutes and resets at midnight
-- **Deep Link from Widget** — Tap the widget to open the Add Food sheet directly via a custom URL scheme
-- **USDA Autocomplete Search** — Live search across 1M+ foods with 300ms debounce powered by the FoodData Central API
-- **Serving Size Control** — Inline `+` / `−` stepper to adjust portions before logging
-- **App Group Sync** — Widget and app share data through a shared `UserDefaults` App Group suite — always in sync
-- **Calorie Ring** — Adaptive color ring: 🟢 green under 85%, 🟠 orange 85–100%, 🔴 red over goal
-- **Daily Goal Settings** — Presets + custom input; default is 2,000 kcal
-- **Persistent Storage** — JSON-encoded entries in App Group UserDefaults, auto-pruned to the last 30 days
+- [x] **Live Home Screen Widget** — Small & medium sizes showing today's calories vs. goal, auto-refreshes every 15 minutes and resets at midnight
+- [x] **Deep Link from Widget** — Tap the widget to open the Add Food sheet directly via a custom URL scheme
+- [x] **USDA Autocomplete Search** — Live search across 1M+ foods with 300ms debounce powered by the FoodData Central API
+- [x] **Serving Size Control** — Inline `+` / `−` stepper to adjust portions before logging
+- [x] **App Group Sync** — Widget and app share data through a shared `UserDefaults` App Group suite — always in sync
+- [x] **Calorie Ring** — Adaptive color ring changes according to progress
+- [x] **Daily Goal Settings** — Presets + custom input; default is 2,000 kcal
+- [x] **Persistent Storage** — JSON-encoded entries in App Group UserDefaults, auto-pruned to the last 30 days
 
 ---
 
