@@ -1,7 +1,6 @@
 import SwiftUI
 import WidgetKit
 
-// MARK: - Content View (Main App)
 struct ContentView: View {
     @StateObject private var searchService = FoodSearchService()
     @State private var entries: [FoodLogEntry] = []
@@ -22,7 +21,6 @@ struct ContentView: View {
                 Color("Background").ignoresSafeArea()
 
                 VStack(spacing: 0) {
-                    // Calorie Ring Header
                     CalorieRingView(
                         total: totalCalories,
                         limit: Double(dailyLimit),
@@ -30,7 +28,6 @@ struct ContentView: View {
                     )
                     .padding(.vertical, 24)
 
-                    // Today's Log
                     List {
                         Section {
                             if entries.isEmpty {
@@ -93,7 +90,6 @@ struct ContentView: View {
     }
 }
 
-// MARK: - Calorie Ring
 struct CalorieRingView: View {
     let total: Double
     let limit: Double

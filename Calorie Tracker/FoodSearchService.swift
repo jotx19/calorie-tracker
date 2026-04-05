@@ -1,5 +1,5 @@
 import Foundation
-let usdaAPIKey = "" // Replace with your actual key
+let usdaAPIKey = "KLauaTx8hDkeuHyrk6akRL69w4qLU57FoGf857bx" // Replace with your actual key
 
 struct USDASearchResult: Codable {
     let foods: [USDAFood]
@@ -62,7 +62,6 @@ struct USDANutrient: Codable {
     }
 }
 
-// MARK: - Food Search Service
 class FoodSearchService: ObservableObject {
     @Published var results: [USDAFood] = []
     @Published var isLoading = false
@@ -78,7 +77,7 @@ class FoodSearchService: ObservableObject {
 
         searchTask?.cancel()
         searchTask = Task {
-            try? await Task.sleep(nanoseconds: 300_000_000) // 300ms debounce
+            try? await Task.sleep(nanoseconds: 300_000_000)
             guard !Task.isCancelled else { return }
 
             await MainActor.run { isLoading = true; error = nil }

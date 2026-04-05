@@ -1,7 +1,6 @@
 import SwiftUI
 import WidgetKit
 
-// MARK: - Add Food Sheet
 struct AddFoodView: View {
     @Environment(\.dismiss) private var dismiss
     @StateObject private var searchService = FoodSearchService()
@@ -20,7 +19,6 @@ struct AddFoodView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Search Bar
                 HStack(spacing: 10) {
                     Image(systemName: "magnifyingglass")
                         .foregroundStyle(.secondary)
@@ -48,7 +46,6 @@ struct AddFoodView: View {
                 .padding(.horizontal)
                 .padding(.top, 12)
 
-                // Selected Food Detail Card
                 if let food = selectedFood {
                     FoodDetailCard(
                         food: food,
@@ -61,7 +58,6 @@ struct AddFoodView: View {
                     .transition(.move(edge: .top).combined(with: .opacity))
                 }
 
-                // Search Results / States
                 Group {
                     if searchService.isLoading {
                         VStack {
@@ -126,7 +122,6 @@ struct AddFoodView: View {
     }
 }
 
-// MARK: - Food Result Row (Autocomplete Item)
 struct FoodResultRow: View {
     let food: USDAFood
     let onTap: () -> Void
@@ -134,7 +129,6 @@ struct FoodResultRow: View {
     var body: some View {
         Button(action: onTap) {
             HStack(spacing: 12) {
-                // Food icon
                 ZStack {
                     Circle()
                         .fill(Color.green.opacity(0.12))
@@ -202,7 +196,6 @@ struct FoodResultRow: View {
     }
 }
 
-// MARK: - Food Detail Card
 struct FoodDetailCard: View {
     let food: USDAFood
     @Binding var servings: String

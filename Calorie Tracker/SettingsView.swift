@@ -28,7 +28,6 @@ struct SettingsView: View {
                 }
                 .padding(.vertical, 4)
 
-                // Preset buttons
                 VStack(alignment: .leading, spacing: 8) {
                     Text("Quick Presets")
                         .font(.caption)
