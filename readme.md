@@ -1,8 +1,4 @@
-# CalorieTracker
-
-<p align="center">
-  <img src="public/hero.png" alt="CalorieTracker Hero" width="100%" />
-</p>
+<h1 align="center">CalorieTracker</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Swift-5.9-FA7343?style=flat-square&logo=swift&logoColor=white" />
@@ -22,11 +18,13 @@
 ## Screenshots
 
 <p align="center">
-  <img src="public/home.png" alt="Home Screen" width="30%" />
+  <img src="public/home.png" alt="Home Screen" width="20% " />
   &nbsp;&nbsp;
-  <img src="public/search.png" alt="Food Search" width="30%" />
+  <img src="public/search.png" alt="Food Search" width="20%" />
   &nbsp;&nbsp;
-  <img src="public/setting.png" alt="Settings" width="30%" />
+  <img src="public/hero.png" alt="Settings" width="20%" />
+  &nbsp;&nbsp;
+  <img src="public/setting.png" alt="Settings" width="20%" />
 </p>
 
 ---
