@@ -10,6 +10,7 @@
 		476EADF62F827FCB00F2E9D9 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476EADF52F827FCB00F2E9D9 /* WidgetKit.framework */; };
 		476EADF82F827FCB00F2E9D9 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476EADF72F827FCB00F2E9D9 /* SwiftUI.framework */; };
 		476EAE072F827FCC00F2E9D9 /* CalorieWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 476EADF32F827FCB00F2E9D9 /* CalorieWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		47D1C6282F838126002CD988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47D1C61A2F838126002CD988 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +42,8 @@
 		476EADF32F827FCB00F2E9D9 /* CalorieWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = CalorieWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		476EADF52F827FCB00F2E9D9 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		476EADF72F827FCB00F2E9D9 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		47ABA6B42F82930F00F5598A /* CalorieWidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CalorieWidgetExtension.entitlements; sourceTree = "<group>"; };
+		47D1C61A2F838126002CD988 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		47D1C61B2F838126002CD988 /* Calorie Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Calorie Tracker.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -52,31 +54,67 @@
 			);
 			target = 476EADF22F827FCB00F2E9D9 /* CalorieWidgetExtension */;
 		};
-		47ABA6B12F828F3600F5598A /* Exceptions for "Calorie Tracker" folder in "CalorieWidgetExtension" target */ = {
+		47D1C65E2F83843E002CD988 /* Exceptions for "Services" folder in "CalorieWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				CalorieStore.swift,
 				FoodSearchService.swift,
-				SharedModels.swift,
+			);
+			target = 476EADF22F827FCB00F2E9D9 /* CalorieWidgetExtension */;
+		};
+		47D1C6612F838447002CD988 /* Exceptions for "Models" folder in "CalorieWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				FoodItem.swift,
+				FoodLogEntry.swift,
 			);
 			target = 476EADF22F827FCB00F2E9D9 /* CalorieWidgetExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		476EADE02F827F8900F2E9D9 /* Calorie Tracker */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				47ABA6B12F828F3600F5598A /* Exceptions for "Calorie Tracker" folder in "CalorieWidgetExtension" target */,
-			);
-			path = "Calorie Tracker";
-			sourceTree = "<group>";
-		};
 		476EADF92F827FCB00F2E9D9 /* CalorieWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				476EAE082F827FCC00F2E9D9 /* Exceptions for "CalorieWidget" folder in "CalorieWidgetExtension" target */,
 			);
 			path = CalorieWidget;
+			sourceTree = "<group>";
+		};
+		47D1C6312F8381C9002CD988 /* Features */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Features;
+			sourceTree = "<group>";
+		};
+		47D1C6322F8381D3002CD988 /* Models */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				47D1C6612F838447002CD988 /* Exceptions for "Models" folder in "CalorieWidgetExtension" target */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		47D1C6332F8381DB002CD988 /* Services */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				47D1C65E2F83843E002CD988 /* Exceptions for "Services" folder in "CalorieWidgetExtension" target */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		47D1C6372F83822D002CD988 /* Preview Content */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		47D1C63A2F838272002CD988 /* App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = App;
+			sourceTree = "<group>";
+		};
+		47D1C63B2F838289002CD988 /* Shared */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -104,11 +142,17 @@
 		476EADD52F827F8900F2E9D9 = {
 			isa = PBXGroup;
 			children = (
-				47ABA6B42F82930F00F5598A /* CalorieWidgetExtension.entitlements */,
-				476EADE02F827F8900F2E9D9 /* Calorie Tracker */,
+				47D1C63B2F838289002CD988 /* Shared */,
+				47D1C63A2F838272002CD988 /* App */,
+				47D1C6332F8381DB002CD988 /* Services */,
+				47D1C6322F8381D3002CD988 /* Models */,
+				47D1C6312F8381C9002CD988 /* Features */,
 				476EADF92F827FCB00F2E9D9 /* CalorieWidget */,
 				476EADF42F827FCB00F2E9D9 /* Frameworks */,
 				476EADDF2F827F8900F2E9D9 /* Products */,
+				47D1C61B2F838126002CD988 /* Calorie Tracker.entitlements */,
+				47D1C61A2F838126002CD988 /* Assets.xcassets */,
+				47D1C6372F83822D002CD988 /* Preview Content */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,7 +192,12 @@
 				476EAE062F827FCC00F2E9D9 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				476EADE02F827F8900F2E9D9 /* Calorie Tracker */,
+				47D1C6312F8381C9002CD988 /* Features */,
+				47D1C6322F8381D3002CD988 /* Models */,
+				47D1C6332F8381DB002CD988 /* Services */,
+				47D1C6372F83822D002CD988 /* Preview Content */,
+				47D1C63A2F838272002CD988 /* App */,
+				47D1C63B2F838289002CD988 /* Shared */,
 			);
 			name = "Calorie Tracker";
 			packageProductDependencies = (
@@ -222,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D1C6282F838126002CD988 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,10 +435,10 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Calorie Tracker/Calorie Tracker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Calorie Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Calorie Tracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = Z497CS562U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -417,10 +467,10 @@
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Calorie Tracker/Calorie Tracker.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Calorie Tracker.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Calorie Tracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Preview Content\"";
 				DEVELOPMENT_TEAM = Z497CS562U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -448,7 +498,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CalorieWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CalorieWidget/CalorieWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z497CS562U;
@@ -477,7 +527,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_ENTITLEMENTS = CalorieWidgetExtension.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CalorieWidget/CalorieWidgetExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z497CS562U;

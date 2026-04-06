@@ -29,11 +29,6 @@
 
 ---
 
-> [!IMPORTANT]
-> **Target Membership — Required for both shared files**
-> In Xcode, select `SharedModels.swift` → press **⌘ ⌥ 1** (File Inspector) → under **Target Membership**, check **both** `CalorieTracker` and `CalorieWidget`. Repeat for `FoodSearchService.swift`.
-> Missing a checkbox = `Cannot find type in scope` build errors.
-
 ## Features
 
 - [x] **Live Home Screen Widget** — Small & medium sizes showing today's calories vs. goal, auto-refreshes every 15 minutes and resets at midnight
@@ -60,25 +55,6 @@
 | Storage | `JSONEncoder` / `JSONDecoder` over UserDefaults |
 | Deep Linking | Custom URL Scheme (`calorietracker://`) |
 
----
-
-## Project Structure
-
-```
-CalorieTracker/
-├── Shared/
-│   ├── SharedModels.swift          # FoodLogEntry model + SharedCalorieStore (App Group)
-│   └── FoodSearchService.swift     # USDA API client + debounced search
-├── CalorieTrackerApp/
-│   ├── CalorieTrackerApp.swift     # App entry point + .onOpenURL deep link handler
-│   ├── ContentView.swift           # Calorie ring + food log list
-│   ├── AddFoodView.swift           # Search sheet + autocomplete + log action
-│   └── SettingsView.swift          # Daily goal picker + presets
-└── CalorieWidget/
-    └── CalorieWidget.swift         # Widget timeline provider + small & medium layouts
-```
-
----
 
 ## Getting Started
 
@@ -125,119 +101,6 @@ let usdaAPIKey = "DEMO_KEY"
 
 with your actual key. `DEMO_KEY` works but is limited to **30 req/hour, 50/day**.
 
-### 5 — Add the URL Scheme
-
-In the main app target's `Info.plist`, add:
-
-```xml
-<key>CFBundleURLTypes</key>
-<array>
-    <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-            <string>calorietracker</string>
-        </array>
-    </dict>
-</array>
-```
-
-Then in `CalorieTrackerApp.swift`, wire the deep link:
-
-```swift
-@main
-struct CalorieTrackerApp: App {
-    @State private var showAddFood = false
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView(showAddFood: $showAddFood)
-                .onOpenURL { url in
-                    if url.scheme == "calorietracker" && url.host == "add" {
-                        showAddFood = true
-                    }
-                }
-        }
-    }
-}
-```
-
-### 6 — File Target Membership
-
-| File | Main App | Widget |
-|---|:---:|:---:|
-| `SharedModels.swift` | ✅ | ✅ |
-| `FoodSearchService.swift` | ✅ | ✅ |
-| `ContentView.swift` | ✅ | ❌ |
-| `AddFoodView.swift` | ✅ | ❌ |
-| `SettingsView.swift` | ✅ | ❌ |
-| `CalorieWidget.swift` | ❌ | ✅ |
-
----
-
-## Data Flow
-
-```
-USDA FoodData Central API
-        │
-        ▼
-FoodSearchService (async/await + debounce)
-        │
-        ▼
-AddFoodView (search UI + serving stepper)
-        │
-        ▼
-SharedCalorieStore ─── App Group UserDefaults ───► CalorieWidget
-        │                                                │
-        ▼                                                ▼
-ContentView                              WidgetCenter.reloadAllTimelines()
-  (ring + log)
-```
-
----
-
-## Widget
-
-| Size | Content |
-|---|---|
-| **Small** | Calorie arc ring · total kcal · remaining · goal |
-| **Medium** | Ring (left) · recent food log entries · progress bar (right) |
-
-The widget refreshes every **15 minutes** via `TimelineReloadPolicy.atEnd`, and includes a midnight boundary entry to reset the daily display automatically.
-
----
-
-## USDA API Reference
-
-| Property | Value |
-|---|---|
-| Endpoint | `https://api.nal.usda.gov/fdc/v1/foods/search` |
-| Energy Nutrient ID | `1008` (kcal) |
-| Data Types | Branded · SR Legacy · Foundation |
-| Free Tier | 1,000 requests/hour with your key |
-| DEMO_KEY Rate Limit | 30/hour · 50/day |
-
----
-
-## Customization
-
-```swift
-// SharedModels.swift
-
-// Change default daily calorie goal
-var dailyLimit: Int {
-    get { defaults?.integer(forKey: "dailyLimit") ?? 2000 }
-}
-
-// FoodSearchService.swift
-
-// Number of search results returned
-let pageSize = 20
-
-// Search debounce delay (nanoseconds)
-try await Task.sleep(nanoseconds: 300_000_000) // 300ms
-```
-
----
 
 ## License
 
