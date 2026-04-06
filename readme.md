@@ -39,7 +39,7 @@
 - [x] **Calorie Ring** — Adaptive color ring changes according to progress
 - [x] **Daily Goal Settings** — Presets + custom input; default is 2,000 kcal
 - [x] **Persistent Storage** — JSON-encoded entries in App Group UserDefaults, auto-pruned to the last 30 days
-- [] **Progress Charts** — Implementing Progress Chart for kcal for past week. 
+- [x] **Progress Charts** — Implementing Progress Chart for kcal for past week. 
 
 ---
 

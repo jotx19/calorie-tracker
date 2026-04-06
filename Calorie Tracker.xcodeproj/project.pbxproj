@@ -142,16 +142,11 @@
 		476EADD52F827F8900F2E9D9 = {
 			isa = PBXGroup;
 			children = (
-				47D1C63B2F838289002CD988 /* Shared */,
-				47D1C63A2F838272002CD988 /* App */,
-				47D1C6332F8381DB002CD988 /* Services */,
-				47D1C6322F8381D3002CD988 /* Models */,
-				47D1C6312F8381C9002CD988 /* Features */,
+				476ED19F2F839FF200F9E047 /* Calorie Tracker */,
 				476EADF92F827FCB00F2E9D9 /* CalorieWidget */,
 				476EADF42F827FCB00F2E9D9 /* Frameworks */,
 				476EADDF2F827F8900F2E9D9 /* Products */,
 				47D1C61B2F838126002CD988 /* Calorie Tracker.entitlements */,
-				47D1C61A2F838126002CD988 /* Assets.xcassets */,
 				47D1C6372F83822D002CD988 /* Preview Content */,
 			);
 			sourceTree = "<group>";
@@ -172,6 +167,19 @@
 				476EADF72F827FCB00F2E9D9 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		476ED19F2F839FF200F9E047 /* Calorie Tracker */ = {
+			isa = PBXGroup;
+			children = (
+				47D1C6312F8381C9002CD988 /* Features */,
+				47D1C63B2F838289002CD988 /* Shared */,
+				47D1C63A2F838272002CD988 /* App */,
+				47D1C6332F8381DB002CD988 /* Services */,
+				47D1C6322F8381D3002CD988 /* Models */,
+				47D1C61A2F838126002CD988 /* Assets.xcassets */,
+			);
+			path = "Calorie Tracker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
